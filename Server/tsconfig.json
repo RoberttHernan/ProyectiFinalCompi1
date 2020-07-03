@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "sourceMap": true,
+        "jsx": "react"
+    },
+    "include": ["Ast/src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+    
+   }

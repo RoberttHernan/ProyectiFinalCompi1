@@ -1,0 +1,42 @@
+Definicion de Lexico para Proyecto 2
+
+El lenguaje soportara
+Cadenas, Identificadores, Enteros, Decimal
+
+
+Comentario de una sola linea 
+//Cualquier Cosa
+
+Comentario Multilinea 
+/*
+Cualquier cosa
+*/
+
+
+Palabras Reservadas 
+int, double, char, bool, string, void , main , if , Console, Write , else 
+switch, case, break, default , for , while , do , return , continue, true, false
+
+
+Simbolos
+;
+{}
+()
+,
+.
+:
+
+
+Simbolos Condicionales 
+=, == , <, >, != , >=, <=, &&, ||, !
+
+
+Operadores aritmeticos 
++-/*
+
+
+
+
+
+
+

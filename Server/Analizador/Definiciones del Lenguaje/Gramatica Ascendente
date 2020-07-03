@@ -1,0 +1,126 @@
+--------------------------------------------Instrucciones -----------------------------------------
+
+Bloque::= {}
+		| {ListaInstrucciones}
+
+ListaInstrucciones::= ListaInstrucciones Instruccion
+					| Instruccion
+
+Instruccion::= Declacion PYC
+			| Asignacion PYC
+			| Sent_Imprimir PYC
+			| break PYC
+			| continue PYC
+			| Sent_Return PYC
+			| Sent_Metodo 
+			| Sent_Funcion 
+			| Sent_Llamada PYC
+			| Id incremento PYC
+			| Id Decremento PYC
+			| Sent_If 
+			| Sent_Switch
+			| Sent_For
+			| Sent_While
+			| Sent_DoWhile PYC
+			| Sent_Main	
+			| Error
+
+-----------------------------------------------Bucles----------------------------------------------
+Sent_While::= while (E) Bloque
+
+Sent_DoWhile::= Do Bloque while (E)
+
+Sent_For::= for (Init_for PYC E PYC End_for pyc ) Bloque
+
+Init_for ::= Declaracion 
+			|Asignacion 
+
+End_for::= Asignacion
+		|  Id incremento
+		|  Id decremento 
+
+
+-----------------------------------------------Sentencias de control------------------------------------------------
+Sent_If ::= Lista_Condiciones else Bloque
+		| ListaCondiciones
+
+ListaCondiciones ::= ListaCondiciones else if (E) Bloque
+					|if (E) Bloque
+
+Sent_Switch ::= switch (E) { ListaCasos }
+
+ListaCasos::= ListaCasos Caso 
+			|Caso 
+
+Caso ::= case E dosPuntos ListaInstrucciones
+		| default DosPuntos ListaInstrucciones
+
+-------------------------------------------Metodos y Funciones-------------------------------------
+Sent_Metodo::= void Id ( ) Bloque 
+			|  void Id (ListaParametros) Bloque
+
+Sent_Funcion::= TipoDato Id ( ) Bloque 
+
+ListaParametros::= ListaParametros coma Parametro
+				|Parametro
+
+Parametro ::= TipoDato Id
+
+ListaArgumentos::= ListaArgumentos coma E
+				| E
+
+Sent_Llamadas ::= Id ()
+			|	  Id (ListaArgumentos)
+
+
+Sent_Return ::= return E
+			|	return
+
+Sent_Imprimir::= Console punto Write ( E)
+
+Sent_Main::= void main (){ListaIntrucciones}
+
+------------------------------------------Declaracion y asignacion ---------------------------------------------
+
+Declaracion ::= TipoDato ListaId = E
+				|TipoDato ListaId
+
+ListaId ::= ListaId coma id 
+			|id
+
+Asignacion ::= Id = E
+
+
+-----------------------------------------------------------Expresiones y tipos de dato----------------------------------
+E::= E+E
+	|E-E
+	|E*E
+	|E/E
+	|E>E
+	|E<E
+	|E!=E
+	|E==E
+	|E<=E
+	|E>=E
+	|E&&E
+	|E||E
+	|!E
+	|(E)
+	|int
+	|flotante
+	|caracter
+	|cadena
+	|true
+	|false
+	|id
+	|id++
+	|id--
+	|id ()
+	|id (listaArgumentos)
+
+TipoDato::=
+	|int
+	|double
+	|string
+	|boolean
+	|char 
