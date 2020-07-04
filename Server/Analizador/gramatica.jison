@@ -54,13 +54,15 @@ let lista_variables = require('../Ast/src/Variable');
 "."         return 'PUNTO';
 ":"         return 'DOSPUNTOS';
 
-"="         return 'IGUAL';
 "=="        return 'DOBLEIGUAL';
+"<="        return 'MENORIGUAL';
+">="        return 'MAYORIGUAL';
+"="         return 'IGUAL';
+
 "<"         return 'MAYOR';
 ">"         return 'MENOR';
 "!="        return 'DIFERENTEDE';
-"<="        return 'MENORIGUAL';
-">="        return 'MAYORIGUAL';
+
 "&&"        return 'AND';
 "||"        return 'OR';
 "!"         return 'NOT';
@@ -74,9 +76,10 @@ let lista_variables = require('../Ast/src/Variable');
 
 
 \"[^\"]*\"		{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
+[0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
 ([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
-[0-9]+"."[0-9]+    	return 'DECIMAL';
+
 
 
 \s+     {}
@@ -197,7 +200,7 @@ Instruccion:
         |Sent_While     {$$ = $1;}
         |Sent_DoWhile   {$$ = $1;}
         |Sent_Main      {$$ = $1;}    
-        |error  
+        |error  PYC
         {
                 var er = new Nodo_aux.Nodo("Error");
 
@@ -288,10 +291,46 @@ End_For: Asignacion
 ;
 /*--------------------------------------Sentencias de control*/
 Sent_If: Lista_Condiciones RESELSE Bloque
-        |Lista_Condiciones
+{
+        var sentIf =$1;
+        var sElse = new Nodo_aux.Nodo("ELSE");
+        sElse.agregarHijo($3);
+        sentIf.agregarHijo(sElse);
+
+        $$ = sentIf;
+}
+        |Lista_Condiciones      { $$ = $1;}
 ;
-Lista_Condiciones: Lista_Condiciones RESELSE RESIF PABRE Expresion PCIERRA Bloque
+Lista_Condiciones: 
+        Lista_Condiciones RESELSE RESIF PABRE Expresion PCIERRA Bloque
+        {
+                var listaCondiciones = $1;
+                var elseIf = new Nodo_aux.Nodo("ELSE_IF");
+
+                var cond = new Nodo_aux.Nodo("CONDICION");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                expr.agregarHijo($5);
+                cond.agregarHijo(expr);
+
+                elseIf.agregarHijo(cond);
+                elseIf.agregarHijo($7);
+                listaCondiciones.agregarHijo(elseIf);
+                $$ = listaCondiciones;
+        }
         |RESIF PABRE Expresion PCIERRA Bloque
+        {
+                var defIf = new Nodo_aux.Nodo("SENTENCIA_IF");
+                var tempIf = new Nodo_aux.Nodo("IF");
+                var cond = new Nodo_aux.Nodo("CONDICION");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                expr.agregarHijo($3);
+                cond.agregarHijo(expr);
+                tempIf.agregarHijo(cond);
+                tempIf.agregarHijo($5);
+                defIf.agregarHijo(tempIf);
+                $$ = defIf;
+                
+        }
 ;
 Sent_Switch : RESWHILE PABRE Expresion PCIERRA CABRE Lista_Casos CCIERRA
 ;
@@ -304,7 +343,7 @@ Caso : RESCASE Expresion DOSPUNTOS Lista_Instrucciones
 /*--------------------------------------Metodos y funciones--------------------------------*/
 Sent_Metodo: RESVOID IDENTIFICADOR PABRE PCIERRA Bloque
 {
-        var metod = new Nodo_aux.Nodo("Metodo");
+        var metod = new Nodo_aux.Nodo("METODO");
         var tipo = new Nodo_aux.Nodo("TIPO");
         var vo = new Nodo_aux.Nodo("VOID");
         tipo.agregarHijo(vo);
@@ -347,7 +386,28 @@ Sent_Metodo: RESVOID IDENTIFICADOR PABRE PCIERRA Bloque
         }
 ;
 Sent_Funcion: TipoDato IDENTIFICADOR PABRE PCIERRA Bloque
+{
+        var func = new Nodo_aux.Nodo("FUNCION");
+        var iden = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($2 +"");
+        iden.agregarHijo(varia);
+        func.agregarHijo($1);
+        func.agregarHijo(iden);
+        func.agregarHijo($5);
+        $$ = func;
+}
         |TipoDato IDENTIFICADOR PABRE ListaParametros PCIERRA Bloque
+        {
+        var func = new Nodo_aux.Nodo("FUNCION");
+        var iden = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($2 +"");
+        iden.agregarHijo(varia);
+        func.agregarHijo($1);
+        func.agregarHijo(iden);
+        func.agregarHijo($4);
+        func.agregarHijo($6);
+        $$ = func;
+        }
 ;
 ListaParametros:
 ListaParametros COMA Parametro 
@@ -393,25 +453,256 @@ Sent_Return: RESRETURN Expresion
 ;
 Sent_Imprimir : RESCONSOLE PUNTO RESWRITE PABRE Expresion PCIERRA
 ;
-Sent_Main: RESVOID RESMAIN PABRE PCIERRA CABRE Lista_Instrucciones CCIERRA
+Sent_Main: RESVOID RESMAIN PABRE PCIERRA Bloque
+{
+        var metod = new Nodo_aux.Nodo("METODO");
+        var tipo = new Nodo_aux.Nodo("TIPO");
+        var vo = new Nodo_aux.Nodo("MAIN");
+        tipo.agregarHijo(vo);
+        metod.agregarHijo(tipo);
+        metod.agregarHijo($5);
+
+        $$ = metod;
+}
 ;
 /*-----------------------------------------------Expresiones y Tipos de Dato-------------------*/
 Expresion : Expresion MAS Expresion    
-        |Expresion MENOS Expresion    
+{
+        var temp = new Nodo_aux.Nodo("OPERACION");
+        var sum = new Nodo_aux.Nodo("SUMA");
+        temp.agregarHijo(sum);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        sum.agregarHijo(temp2);
+        sum.agregarHijo(temp3);
+        temp.agregarHijo(sum);
+
+        $$ = temp;
+}
+        |Expresion MENOS Expresion  
+        {
+
+        var temp = new Nodo_aux.Nodo("OPERACION");
+        var res = new Nodo_aux.Nodo("RESTA");
+        temp.agregarHijo(res);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        res.agregarHijo(temp2);
+        res.agregarHijo(temp3);
+        temp.agregarHijo(res);
+
+        $$ = temp;
+        }  
         |Expresion MULTI Expresion
+        {
+
+        var temp = new Nodo_aux.Nodo("OPERACION");
+        var op = new Nodo_aux.Nodo("MULTI");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion DIV Expresion
+        {
+        var temp = new Nodo_aux.Nodo("OPERACION");
+        var op = new Nodo_aux.Nodo("DIV");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion MAYOR Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("MAYOR");
+        temp.agregarHijo(op);
+
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion MENOR Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("MENOR");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion DIFERENTEDE Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("DIFERENTE_DE");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion DOBLEIGUAL Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("COMPARACION");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+       
+        }
         |Expresion MAYORIGUAL Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("MAYOR_IGUAL");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;     
+        }
         |Expresion MENORIGUAL Expresion
+        {
+        var temp = new Nodo_aux.Nodo("RELACION");
+        var op = new Nodo_aux.Nodo("MENOR_IGUAL");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion AND Expresion
+        {
+        var temp = new Nodo_aux.Nodo("LOGICA");
+        var op = new Nodo_aux.Nodo("AND");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |Expresion OR Expresion
+        {
+        var temp = new Nodo_aux.Nodo("LOGICA");
+        var op = new Nodo_aux.Nodo("OR");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
         |NOT Expresion
-        |PABRE Expresion PCIERRA 
-        |MENOS Expresion %prec UMenos
+        {
+        var temp = new Nodo_aux.Nodo("LOGICA");
+        var op = new Nodo_aux.Nodo("NOT");
+        temp.agregarHijo(op);
+        var temp2 = new Nodo_aux.Nodo("EXPRESION");
+        temp2.agregarHijo($1);
+        var temp3 = new Nodo_aux.Nodo("EXPRESION");
+        temp3.agregarHijo($3);
+
+        op.agregarHijo(temp2);
+        op.agregarHijo(temp3);
+        temp.agregarHijo(op);
+
+        $$ = temp;
+        }
+        |PABRE Expresion PCIERRA        {$$ = $2;}
+        |MENOS Expresion %prec UMenos   
+        {
+                var temp = new Nodo_aux.Nodo("OPERACION");
+                var temp2 = new Nodo_aux.Nodo("MENOS_UNARIO");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                temp.agregarHijo(temp2);
+                expr.agregarHijo(temp2);
+
+                temp2.agregarHijo(expr);
+
+                $$ = temp;
+        }
         |MAS Expresion %prec UMas
+        {
+                var temp = new Nodo_aux.Nodo("OPERACION");
+                var temp2 = new Nodo_aux.Nodo("MAS_UNARIO");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                temp.agregarHijo(temp2);
+                expr.agregarHijo(temp2);
+
+                temp2.agregarHijo(expr);
+
+                $$ = temp;
+        }
         |ENTERO 
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
@@ -420,15 +711,67 @@ Expresion : Expresion MAS Expresion
                 $$= temp;
         }
         |DECIMAL
+        {
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp.agregarHijo(temp2);
+                $$= temp;     
+        }
         |CADENA
+        {
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp.agregarHijo(temp2);
+                $$= temp;
+        }
         |RESTRUE
-        |RESFALSE
-        |IDENTIFICADOR
-        |IDENTIFICADOR INCREMENTO
-        |IDENTIFICADOR DECREMENTO
-        |IDENTIFICADOR PABRE PCIERRA
-        |IDENTIFICADOR PABRE Lista_Argumentos PCIERRA
+        {
 
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp.agregarHijo(temp2);
+                $$= temp;
+        }
+        |RESFALSE
+        {
+
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp.agregarHijo(temp2);
+                $$= temp;
+        }
+        |IDENTIFICADOR
+        {
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                var iden = new Nodo_aux.Nodo("IDENTIFICADOR");
+                var varia = new Nodo_aux.Nodo($1+"");
+                iden.agregarHijo(varia);
+                expr.agregarHijo(iden);
+                $$ = expr;
+                
+        }
+        |IDENTIFICADOR INCREMENTO
+        {
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+                var incre = new Nodo_aux.Nodo("INCREMENTO");
+                var varia = new Nodo_aux.Nodo($1+"");
+                ide.agregarHijo(varia);
+                expr.agregarHijo(ide);
+                expr.agregarHijo(incre);
+                $$ = expr;
+        }
+        |IDENTIFICADOR DECREMENTO
+        {
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+                var decre = new Nodo_aux.Nodo("DECREMENTO");
+                var varia = new Nodo_aux.Nodo($1+"");
+                ide.agregarHijo(varia);
+                expr.agregarHijo(ide);
+                expr.agregarHijo(decre);
+                $$ = expr;
+        }
 ;
 TipoDato: 
         RESINT
