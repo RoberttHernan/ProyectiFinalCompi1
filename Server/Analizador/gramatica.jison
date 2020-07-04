@@ -201,7 +201,7 @@ Instruccion:
         |Sent_Switch    {$$ = $1;}
         |Sent_For       {$$ = $1;}
         |Sent_While     {$$ = $1;}
-        |Sent_DoWhile   {$$ = $1;}
+        |Sent_DoWhile PYC   {$$ = $1;}
         |Sent_Main      {$$ = $1;}    
         |error  PYC
         {
@@ -280,8 +280,30 @@ Asignacion:
 
 /*----------------------------------------------Bucles------------------------------*/
 Sent_While: RESWHILE PABRE Expresion PCIERRA Bloque
+{
+        var while_nombre = new Nodo_aux.Nodo("WHILE");
+        var cond = new Nodo_aux.Nodo("CONDICION");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($3);
+        cond.agregarHijo(expr);
+
+        while_nombre.agregarHijo(cond);
+        while_nombre.agregarHijo($5);
+        $$=while_nombre;
+}
 ;
 Sent_DoWhile: RESDO Bloque RESWHILE PABRE Expresion PCIERRA 
+{
+        var do_w = new Nodo_aux.Nodo("DO_WHILE");
+        var cond = new Nodo_aux.Nodo("CONDICION");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($5);
+        cond.agregarHijo(expr);
+
+        do_w.agregarHijo($2);
+        do_w.agregarHijo(cond);
+        $$=do_w;
+}
 ;
 Sent_For: RESFOR PABRE Init_For PYC Expresion PYC End_For PYC PCIERRA Bloque
 ;
