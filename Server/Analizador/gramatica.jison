@@ -332,13 +332,58 @@ Lista_Condiciones:
                 
         }
 ;
-Sent_Switch : RESWHILE PABRE Expresion PCIERRA CABRE Lista_Casos CCIERRA
+Sent_Switch : RESSWITCH PABRE Expresion PCIERRA CABRE Lista_Casos CCIERRA
+{
+        
+        var swi = new Nodo_aux.Nodo("SENT_SWITCH");
+        var param = new Nodo_aux.Nodo("PARAMETRO");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($3);
+        param.agregarHijo(expr);
+        swi.agregarHijo(param);
+        swi.agregarHijo($6);
+        $$ = swi;
+        
+        
+}
 ;
 Lista_Casos: Lista_Casos Caso
+{
+       
+        var lista = $1;
+        lista.agregarHijo($2);
+        $$ = lista;
+}
         |Caso
+        {
+                
+                var lista = new Nodo_aux.Nodo("LISTA_CASOS");
+                lista.agregarHijo($1);
+                $$ = lista;
+        }
 ;
 Caso : RESCASE Expresion DOSPUNTOS Lista_Instrucciones 
-        RESDEFAULT DOSPUNTOS Lista_Instrucciones
+{
+        
+        var caso = new Nodo_aux.Nodo("CASO");
+        var cond = new Nodo_aux.Nodo("CONDICION");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($2);
+        cond.agregarHijo(expr);
+        caso.agregarHijo(cond);
+        caso.agregarHijo($4);
+
+        $$ = caso;
+        
+
+}
+        |RESDEFAULT DOSPUNTOS Lista_Instrucciones
+        {
+                var def = new Nodo_aux.Nodo("DEFAULT");
+                def.agregarHijo($3);
+                $$ = def;
+                
+        }
 ;
 /*--------------------------------------Metodos y funciones--------------------------------*/
 Sent_Metodo: RESVOID IDENTIFICADOR PABRE PCIERRA Bloque
@@ -748,6 +793,7 @@ Expresion : Expresion MAS Expresion
                 iden.agregarHijo(varia);
                 expr.agregarHijo(iden);
                 $$ = expr;
+                
                 
         }
         |IDENTIFICADOR INCREMENTO
