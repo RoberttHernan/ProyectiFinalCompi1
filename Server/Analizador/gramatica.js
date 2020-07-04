@@ -429,6 +429,31 @@ case 52:
         
 
 break;
+case 57:
+
+        var ret = new Nodo_aux.Nodo("RETURN");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($$[$0]);
+        ret.agregarHijo(expr);
+        this.$ = ret;
+
+break;
+case 58:
+
+           var ret = new Nodo_aux.Nodo("RETURN");
+           this.$ = ret;     
+        
+break;
+case 59:
+
+        var print = new Nodo_aux.Nodo("CONSOLE_WRITE");
+        var expr = new Nodo_aux.Nodo ("EXPRESION");
+        expr.agregarHijo($$[$0-1]);
+        print.agregarHijo(expr);
+        this.$ = print;
+
+
+break;
 case 60:
 
         var metod = new Nodo_aux.Nodo("METODO");
@@ -1381,120 +1406,122 @@ options: {"case-insensitive":true},
 performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
-case 0:return 77;
+case 0:     
 break;
-case 1:return 78;
+case 1:
 break;
-case 2:return 81;
+case 2:return 77;
 break;
-case 3:return 80;
+case 3:return 78;
 break;
-case 4:return 79;
+case 4:return 81;
 break;
-case 5:return 50;
+case 5:return 80;
 break;
-case 6:return 58;
+case 6:return 79;
 break;
-case 7:return 43;
+case 7:return 50;
 break;
-case 8:return 55;
+case 8:return 58;
 break;
-case 9:return 57;
+case 9:return 43;
 break;
-case 10:return 42;
+case 10:return 55;
 break;
-case 11:return 44;
+case 11:return 57;
 break;
-case 12:return 47;
+case 12:return 42;
 break;
-case 13:return 14;
+case 13:return 44;
 break;
-case 14:return 49;
+case 14:return 47;
 break;
-case 15:return 38;
+case 15:return 14;
 break;
-case 16:return 34;
+case 16:return 49;
 break;
-case 17:return 37;
+case 17:return 38;
 break;
-case 18:return  'RESRETURN';
+case 18:return 34;
 break;
-case 19:return 15;
+case 19:return 37;
 break;
-case 20:return 75;
+case 20:return  'RESRETURN';
 break;
-case 21:return 76;
+case 21:return 15;
 break;
-case 22:return 11;
+case 22:return 75;
 break;
-case 23:return 7;
+case 23:return 76;
 break;
-case 24:return 8;
+case 24:return 11;
 break;
-case 25:return 35;
+case 25:return 7;
 break;
-case 26:return 36;
+case 26:return 8;
 break;
-case 27:return 33;
+case 27:return 35;
 break;
-case 28:return 56;
+case 28:return 36;
 break;
-case 29:return 48;
+case 29:return 33;
 break;
-case 30:return 66;
+case 30:return 56;
 break;
-case 31:return 68;
+case 31:return 48;
 break;
-case 32:return 67;
+case 32:return 66;
 break;
-case 33:return 31;
+case 33:return 68;
 break;
-case 34:return 63;
+case 34:return 67;
 break;
-case 35:return 64;
+case 35:return 31;
 break;
-case 36:return 65;
+case 36:return 63;
 break;
-case 37:return 69;
+case 37:return 64;
 break;
-case 38:return 70;
+case 38:return 65;
 break;
-case 39:return 71;
+case 39:return 69;
 break;
-case 40:return 59;
+case 40:return 70;
 break;
-case 41:return 60;
+case 41:return 71;
 break;
-case 42:return 62;
+case 42:return 21;
 break;
-case 43:return 61;
+case 43:return  'DECREMENTO';
 break;
-case 44:return 21;
+case 44:return 59;
 break;
-case 45:return  'DECREMENTO';
+case 45:return 60;
 break;
-case 46: yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-2); return 74; 
+case 46:return 62;
 break;
-case 47:return 73;
+case 47:return 61;
 break;
-case 48:return 72;
+case 48: yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-2); return 74; 
 break;
-case 49:return 20;
+case 49:return 73;
 break;
-case 50:
+case 50:return 72;
 break;
-case 51:
+case 51:return 20;
 break;
-case 52:return 5;
+case 52:
 break;
-case 53: //console.error('Error léxico: ' + yy_.yytext + ', en la linea: ' + yy_.yylloc.first_line + ', en la columna: ' + yy_.yylloc.first_column);
+case 53:return 5;
+break;
+case 54: //console.error('Error léxico: ' + yy_.yytext + ', en la linea: ' + yy_.yylloc.first_line + ', en la columna: ' + yy_.yylloc.first_column);
                                         Errores_1.errores.add(new nodoError_1.NodoError('Lexico',yy_.yytext,yy_.yylloc.first_line,yy_.yylloc.first_column));
                                                  
 break;
 }
 },
-rules: [/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:bool\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:main\b)/i,/^(?:if\b)/i,/^(?:Console\b)/i,/^(?:Write\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:break\b)/i,/^(?:default\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:return\b)/i,/^(?:continue\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:;)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:,)/i,/^(?:\.)/i,/^(?::)/i,/^(?:==)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:!=)/i,/^(?:&&)/i,/^(?:\|\|)/i,/^(?:!)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\/)/i,/^(?:\*)/i,/^(?:\+\+)/i,/^(?:--)/i,/^(?:"[^\"]*")/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:([a-zA-Z])[a-zA-Z0-9_]*)/i,/^(?:\s+)/i,/^(?:[\/][*][^*]*[*]+([^\/*][^*]*[*]+)*[\/])/i,/^(?:$)/i,/^(?:.)/i],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53],"inclusive":true}}
+rules: [/^(?:["\/"]["\/"][^\r\n]*[\n|\r|\r\n|\n\r]?)/i,/^(?:[\/][*][^*]*[*]+([^\/*][^*]*[*]+)*[\/])/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:bool\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:main\b)/i,/^(?:if\b)/i,/^(?:Console\b)/i,/^(?:Write\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:break\b)/i,/^(?:default\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:return\b)/i,/^(?:continue\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:;)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:,)/i,/^(?:\.)/i,/^(?::)/i,/^(?:==)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:!=)/i,/^(?:&&)/i,/^(?:\|\|)/i,/^(?:!)/i,/^(?:\+\+)/i,/^(?:--)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\/)/i,/^(?:\*)/i,/^(?:"[^\"]*")/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:([a-zA-Z])[a-zA-Z0-9_]*)/i,/^(?:[ \t\r\n\f])/i,/^(?:$)/i,/^(?:.)/i],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"inclusive":true}}
 });
 return lexer;
 })();

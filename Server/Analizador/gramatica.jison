@@ -19,6 +19,8 @@ let lista_variables = require('../Ast/src/Variable');
 
 %%
 
+["/"]["/"][^\r\n]*[\n|\r|\r\n|\n\r]?        %{     %}
+[/][*][^*]*[*]+([^/*][^*]*[*]+)*[/] {}
 
 
 
@@ -67,12 +69,13 @@ let lista_variables = require('../Ast/src/Variable');
 "||"        return 'OR';
 "!"         return 'NOT';
 
+"++"        return 'INCREMENTO';
+"--"        return  'DECREMENTO';
 "+"         return 'MAS';
 "-"         return 'MENOS';
 "/"         return 'DIV';
 "*"         return 'MULTI';
-"++"        return 'INCREMENTO';
-"--"        return  'DECREMENTO';
+
 
 
 \"[^\"]*\"		{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
@@ -82,8 +85,8 @@ let lista_variables = require('../Ast/src/Variable');
 
 
 
-\s+     {}
-[/][*][^*]*[*]+([^/*][^*]*[*]+)*[/] {}
+[ \t\r\n\f] {}
+
 
 
 <<EOF>>				return 'EOF';
@@ -494,9 +497,28 @@ Sent_Llamada : IDENTIFICADOR PABRE PCIERRA
         | IDENTIFICADOR PABRE Lista_Argumentos PCIERRA
 ;
 Sent_Return: RESRETURN Expresion
+{
+        var ret = new Nodo_aux.Nodo("RETURN");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($2);
+        ret.agregarHijo(expr);
+        $$ = ret;
+}
         | RESRETURN
+        {
+           var ret = new Nodo_aux.Nodo("RETURN");
+           $$ = ret;     
+        }
 ;
 Sent_Imprimir : RESCONSOLE PUNTO RESWRITE PABRE Expresion PCIERRA
+{
+        var print = new Nodo_aux.Nodo("CONSOLE_WRITE");
+        var expr = new Nodo_aux.Nodo ("EXPRESION");
+        expr.agregarHijo($5);
+        print.agregarHijo(expr);
+        $$ = print;
+
+}
 ;
 Sent_Main: RESVOID RESMAIN PABRE PCIERRA Bloque
 {

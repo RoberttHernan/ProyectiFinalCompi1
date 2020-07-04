@@ -30,11 +30,14 @@ var lista = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
 
-lista.push(Errores_aux.errores.geterror());
-imprimir(parseado);
+    lista.push(Errores_aux.errores.geterror());
+    imprimir(parseado);
+    res.send(JSON.stringify(lista));
 
 
-res.send(JSON.stringify(lista));
+
+
+
 
 
 });
