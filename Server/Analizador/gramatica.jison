@@ -305,14 +305,75 @@ Sent_DoWhile: RESDO Bloque RESWHILE PABRE Expresion PCIERRA
         $$=do_w;
 }
 ;
-Sent_For: RESFOR PABRE Init_For PYC Expresion PYC End_For PYC PCIERRA Bloque
+Sent_For: RESFOR PABRE Init_For PYC Expresion PYC End_For PCIERRA Bloque
+{
+       
+        var defFor = new Nodo_aux.Nodo("FOR");  
+        var cond = new Nodo_aux.Nodo("CONDICION");
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        
+        expr.agregarHijo($5);
+        
+        cond.agregarHijo(expr);
+
+        defFor.agregarHijo($3);
+        defFor.agregarHijo(cond);
+        defFor.agregarHijo($7);
+        defFor.agregarHijo($9);
+
+        $$= defFor;
+       
+}
 ;
 Init_For: Declaracion
+{
+        
+        var init = new Nodo_aux.Nodo("INICIO");
+        init.agregarHijo($1);
+        
+        $$ = init;
+       
+        
+}
         |Asignacion
+        {
+            var init = new Nodo_aux.Nodo("INICIO");
+            init.agregarHijo($1);
+            $$ = init;    
+        }
 ;
 End_For: Asignacion
+{
+        var en_for = new Nodo_aux.Nodo("END_FOR");
+        en_for.agregarHijo($1);
+        $$ = en_for;
+
+
+}
         |IDENTIFICADOR INCREMENTO
+        {
+                
+                var en_for = new Nodo_aux.Nodo("END_FOR");
+                var incre = new Nodo_aux.Nodo("INCREMENTO");
+                var iden = new Nodo_aux.Nodo("IDENTIFICADOR");
+                var varia = new Nodo_aux.Nodo($1+"");
+                iden.agregarHijo(varia);
+                incre.agregarHijo(iden);
+                en_for.agregarHijo(incre);
+                $$ = en_for;
+                
+        }
         |IDENTIFICADOR DECREMENTO
+        {
+                var en_for = new Nodo_aux.Nodo("END_FOR");
+                var decre = new Nodo_aux.Nodo("DECREMENTO");
+                var iden = new Nodo_aux.Nodo("IDENTIFICADOR");
+                var varia = new Nodo_aux.Nodo($1+"");
+                iden.agregarHijo(varia);
+                decre.agregarHijo(iden);
+                en_for.agregarHijo(decre);
+                $$ = en_for;   
+        }
 ;
 /*--------------------------------------Sentencias de control*/
 Sent_If: Lista_Condiciones RESELSE Bloque
