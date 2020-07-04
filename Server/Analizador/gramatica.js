@@ -132,7 +132,7 @@ case 9:
 break;
 case 10:
 
-                var cont = new Nodo_aux.Nodo("CONT");
+                var cont = new Nodo_aux.Nodo("CONTINUE");
                 this.$ = cont;
         
 break;
@@ -775,17 +775,14 @@ case 72:
 break;
 case 73:
 
+                console.log("--------------");
         var temp = new Nodo_aux.Nodo("LOGICA");
         var op = new Nodo_aux.Nodo("NOT");
         temp.agregarHijo(op);
         var temp2 = new Nodo_aux.Nodo("EXPRESION");
-        temp2.agregarHijo($$[$0-1]);
-        var temp3 = new Nodo_aux.Nodo("EXPRESION");
-        temp3.agregarHijo($$[$01]);
+        temp2.agregarHijo($$[$0]);
 
-        op.agregarHijo(temp2);
-        op.agregarHijo(temp3);
-        temp.agregarHijo(op);
+       op.agregarHijo(temp2);
 
         this.$ = temp;
         
@@ -1609,18 +1606,20 @@ case 50:return 72;
 break;
 case 51:return 20;
 break;
-case 52:
+case 52:return 74
 break;
-case 53:return 5;
+case 53:
 break;
-case 54: //console.error('Error léxico: ' + yy_.yytext + ', en la linea: ' + yy_.yylloc.first_line + ', en la columna: ' + yy_.yylloc.first_column);
+case 54:return 5;
+break;
+case 55: //console.error('Error léxico: ' + yy_.yytext + ', en la linea: ' + yy_.yylloc.first_line + ', en la columna: ' + yy_.yylloc.first_column);
                                         Errores_1.errores.add(new nodoError_1.NodoError('Lexico',yy_.yytext,yy_.yylloc.first_line,yy_.yylloc.first_column));
                                                  
 break;
 }
 },
-rules: [/^(?:["\/"]["\/"][^\r\n]*[\n|\r|\r\n|\n\r]?)/i,/^(?:[\/][*][^*]*[*]+([^\/*][^*]*[*]+)*[\/])/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:bool\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:main\b)/i,/^(?:if\b)/i,/^(?:Console\b)/i,/^(?:Write\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:break\b)/i,/^(?:default\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:return\b)/i,/^(?:continue\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:;)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:,)/i,/^(?:\.)/i,/^(?::)/i,/^(?:==)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:!=)/i,/^(?:&&)/i,/^(?:\|\|)/i,/^(?:!)/i,/^(?:\+\+)/i,/^(?:--)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\/)/i,/^(?:\*)/i,/^(?:"[^\"]*")/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:([a-zA-Z])[a-zA-Z0-9_]*)/i,/^(?:[ \t\r\n\f])/i,/^(?:$)/i,/^(?:.)/i],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"inclusive":true}}
+rules: [/^(?:["\/"]["\/"][^\r\n]*[\n|\r|\r\n|\n\r]?)/i,/^(?:[\/][*][^*]*[*]+([^\/*][^*]*[*]+)*[\/])/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:bool\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:main\b)/i,/^(?:if\b)/i,/^(?:Console\b)/i,/^(?:Write\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?:break\b)/i,/^(?:default\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:return\b)/i,/^(?:continue\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:;)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:,)/i,/^(?:\.)/i,/^(?::)/i,/^(?:==)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:!=)/i,/^(?:&&)/i,/^(?:\|\|)/i,/^(?:!)/i,/^(?:\+\+)/i,/^(?:--)/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\/)/i,/^(?:\*)/i,/^(?:"[^\"]*")/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:([a-zA-Z])[a-zA-Z0-9_]*)/i,/^(?:('[.]'))/i,/^(?:[ \t\r\n\f])/i,/^(?:$)/i,/^(?:.)/i],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55],"inclusive":true}}
 });
 return lexer;
 })();

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Nodo = void 0;
 var Nodo = /** @class */ (function () {
     function Nodo(nombre) {
@@ -15,6 +15,21 @@ var Nodo = /** @class */ (function () {
     Nodo.prototype.getListaHijos = function () {
         return this.ListaHijos;
     };
+    Object.defineProperty(Nodo.prototype, "nombre_", {
+        //borrar esto si algo ocurre :((((
+        get: function () {
+            return this.nombre;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Nodo.prototype, "listaHijos_", {
+        get: function () {
+            return this.ListaHijos;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Nodo;
 }());
 exports.Nodo = Nodo;

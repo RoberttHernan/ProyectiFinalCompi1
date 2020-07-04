@@ -31,6 +31,7 @@ var dato = req.body.dato;
 var parseado = parser(dato);
 
     lista.push(Errores_aux.errores.geterror());
+    lista.push(parseado);
     imprimir(parseado);
     res.send(JSON.stringify(lista));
 

@@ -2,7 +2,8 @@
     "compilerOptions": {
         "module": "commonjs",
         "sourceMap": true,
-        "jsx": "react"
+        "jsx": "react",
+        "target": "es5"
     },
     "include": ["Ast/src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]

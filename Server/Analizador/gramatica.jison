@@ -82,6 +82,7 @@ let lista_variables = require('../Ast/src/Variable');
 [0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
 ([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
+(\'[.]\')               return 'CADENA'
 
 
 
@@ -168,7 +169,7 @@ Instruccion:
        
         |RESCONTINUE PYC 
         {
-                var cont = new Nodo_aux.Nodo("CONT");
+                var cont = new Nodo_aux.Nodo("CONTINUE");
                 $$ = cont;
         }
        
@@ -814,17 +815,14 @@ Expresion : Expresion MAS Expresion
         }
         |NOT Expresion
         {
+                console.log("--------------");
         var temp = new Nodo_aux.Nodo("LOGICA");
         var op = new Nodo_aux.Nodo("NOT");
         temp.agregarHijo(op);
         var temp2 = new Nodo_aux.Nodo("EXPRESION");
-        temp2.agregarHijo($1);
-        var temp3 = new Nodo_aux.Nodo("EXPRESION");
-        temp3.agregarHijo($3);
+        temp2.agregarHijo($2);
 
-        op.agregarHijo(temp2);
-        op.agregarHijo(temp3);
-        temp.agregarHijo(op);
+       op.agregarHijo(temp2);
 
         $$ = temp;
         }

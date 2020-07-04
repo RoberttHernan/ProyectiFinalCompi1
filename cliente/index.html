@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="codemirror//lib//codemirror.css">
     <link rel="stylesheet" href="codemirror//theme//midnight.css">
     <script src="codemirror/mode/clike/clike.js"></script>
+    <script src="dist/jstree.min.js"></script>
+    
 </head>
     <div class="contenedor">
         <input id="fileInput" title="Abrir" type="file" size="50" onchange="AbrirArchivo(this.files)" class="btnp">
@@ -40,6 +42,7 @@
             <div id="contenidopestanas">
             </div>
             <div id ="reporteErrores"></div>
+            <div id ="ArbolAst" class="demo jstree jstree-1 jstree-default" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="jl_3" aria-busy="false"></div>
         </body>
     </div>
 

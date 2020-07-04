@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.NodoError = void 0;
 var NodoError = /** @class */ (function () {
     function NodoError(tipo, descripcion, linea, columna) {

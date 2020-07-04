@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.analisisError = void 0;
 var analisisError = /** @class */ (function () {
     function analisisError(tipo, linea, columna, descripcion) {
