@@ -528,6 +528,46 @@ case 52:
         
 
 break;
+case 53:
+
+        var lista_arg = $$[$0-2];
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($$[$0]);
+        lista_arg.agregarHijo(expr);
+        this.$ = lista_arg;
+
+break;
+case 54:
+
+                var lista_arg = new Nodo_aux.Nodo("LISTA_ARGUMENTOS");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                expr.agregarHijo($$[$0]);
+                lista_arg.agregarHijo(expr);
+                this.$ = lista_arg;
+
+        
+break;
+case 55:
+
+        var llama = new Nodo_aux.Nodo("LLAMADA");
+        var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($$[$0-2]+"");
+        ide.agregarHijo(varia);
+        llama.agregarHijo(ide);
+        this.$ = llama;
+
+break;
+case 56:
+
+        var llama = new Nodo_aux.Nodo("LLAMADA");  
+        var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($$[$0-3]+""); 
+        ide.agregarHijo(varia);
+        llama.agregarHijo(ide);
+        llama.agregarHijo($$[$0-1]);
+        this.$ = llama;
+        
+break;
 case 57:
 
         var ret = new Nodo_aux.Nodo("RETURN");
@@ -813,10 +853,12 @@ case 76:
                 this.$ = temp;
         
 break;
-case 77: case 79:
+case 77:
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var ent = new Nodo_aux.Nodo($$[$0]+"");
+                temp2.agregarHijo(ent);
                 temp.agregarHijo(temp2);
                 this.$= temp;
         
@@ -825,15 +867,42 @@ case 78:
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var dec = new Nodo_aux.Nodo($$[$0]+"");
+                temp2.agregarHijo(dec);
                 temp.agregarHijo(temp2);
                 this.$= temp;     
         
 break;
-case 80: case 81:
+case 79:
+
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var cad = new Nodo_aux.Nodo($$[$0]+"");
+                temp2.agregarHijo(cad);
+                temp.agregarHijo(temp2);
+                this.$= temp;
+        
+break;
+case 80:
 
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var tru = new Nodo_aux.Nodo($$[$0]+"");
+                temp2.agregarHijo(tru);
+                temp.agregarHijo(temp2);
+                
+                
+                this.$= temp;
+        
+break;
+case 81:
+
+
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var fals = new Nodo_aux.Nodo($$[$0]+"");
+                temp2.agregarHijo(fals);
                 temp.agregarHijo(temp2);
                 this.$= temp;
         
@@ -903,7 +972,7 @@ case 88:
 
                 var temp = new Nodo_aux.Nodo("TIPO");
                 var temp2 = new Nodo_aux.Nodo("BOOL");
-                temp.agregarHijo(temp2);
+                temp.agregarHijo(temp2);CVariable
                 this.$ = temp;
         
 break;

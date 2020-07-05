@@ -575,10 +575,42 @@ TipoDato IDENTIFICADOR
 }
 ;
 Lista_Argumentos : Lista_Argumentos COMA Expresion
+{
+        var lista_arg = $1;
+        var expr = new Nodo_aux.Nodo("EXPRESION");
+        expr.agregarHijo($3);
+        lista_arg.agregarHijo(expr);
+        $$ = lista_arg;
+}
         |Expresion
+        {
+                var lista_arg = new Nodo_aux.Nodo("LISTA_ARGUMENTOS");
+                var expr = new Nodo_aux.Nodo("EXPRESION");
+                expr.agregarHijo($1);
+                lista_arg.agregarHijo(expr);
+                $$ = lista_arg;
+
+        }
 ;
 Sent_Llamada : IDENTIFICADOR PABRE PCIERRA
+{
+        var llama = new Nodo_aux.Nodo("LLAMADA");
+        var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($1+"");
+        ide.agregarHijo(varia);
+        llama.agregarHijo(ide);
+        $$ = llama;
+}
         | IDENTIFICADOR PABRE Lista_Argumentos PCIERRA
+        {
+        var llama = new Nodo_aux.Nodo("LLAMADA");  
+        var ide = new Nodo_aux.Nodo("IDENTIFICADOR");
+        var varia = new Nodo_aux.Nodo($1+""); 
+        ide.agregarHijo(varia);
+        llama.agregarHijo(ide);
+        llama.agregarHijo($3);
+        $$ = llama;
+        }
 ;
 Sent_Return: RESRETURN Expresion
 {
@@ -855,6 +887,8 @@ Expresion : Expresion MAS Expresion
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var ent = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(ent);
                 temp.agregarHijo(temp2);
                 $$= temp;
         }
@@ -862,6 +896,8 @@ Expresion : Expresion MAS Expresion
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var dec = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(dec);
                 temp.agregarHijo(temp2);
                 $$= temp;     
         }
@@ -869,6 +905,8 @@ Expresion : Expresion MAS Expresion
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var cad = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(cad);
                 temp.agregarHijo(temp2);
                 $$= temp;
         }
@@ -877,7 +915,11 @@ Expresion : Expresion MAS Expresion
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var tru = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(tru);
                 temp.agregarHijo(temp2);
+                
+                
                 $$= temp;
         }
         |RESFALSE
@@ -885,6 +927,8 @@ Expresion : Expresion MAS Expresion
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var fals = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(fals);
                 temp.agregarHijo(temp2);
                 $$= temp;
         }

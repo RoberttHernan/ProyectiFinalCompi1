@@ -6,7 +6,7 @@ Bloque::= {}
 ListaInstrucciones::= ListaInstrucciones Instruccion
 					| Instruccion
 
-Instruccion::= Declacion PYC
+Instruccion::= Declaracion PYC
 			| Asignacion PYC
 			| Sent_Imprimir PYC
 			| break PYC

@@ -14,6 +14,7 @@ var Variable_aux = require('./Ast/src/Variable');
 var fs = require('fs'); 
 
 var listaVariables=[];
+var texoTraduccion; 
 
 
 var app = express();
@@ -36,7 +37,7 @@ var htmlVar = htmlVariables();
     lista.push(Errores_aux.errores.geterror());//Lista de errores en lista[0]
     lista.push(parseado);// Arbol Ast  en lista[1]
     lista.push(htmlVar);//Lista de variables en lista[2]
-    
+
     
     
   
@@ -133,4 +134,7 @@ function htmlVariables(){
     texto+= "</table>";
     return texto;
 
+}
+function recorridoArbolTraduccion(raiz){
+    
 }
