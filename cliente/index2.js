@@ -20,6 +20,7 @@ function Conexion (){
             ReporteAst(lista[1]);
             ReporteVariables(lista[2]);
             
+           
             
            
 
@@ -62,6 +63,6 @@ function generalAst (raiz){
     cadena += "</li>";
     return cadena;
 }
-    
+
    
 }

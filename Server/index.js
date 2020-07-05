@@ -30,13 +30,14 @@ Errores_aux.errores.clear();
 var lista = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
-var htmlVariables_ = recorridoArbol(parseado);
+recorridoArbol(parseado);
+var htmlVar = htmlVariables();
 
     lista.push(Errores_aux.errores.geterror());//Lista de errores en lista[0]
     lista.push(parseado);// Arbol Ast  en lista[1]
-    lista.push(htmlVariables_);//Lista de variables en lista[2]
-
-    //imprimir(parseado);
+    lista.push(htmlVar);//Lista de variables en lista[2]
+    
+    
     
   
     res.send(JSON.stringify(lista));
