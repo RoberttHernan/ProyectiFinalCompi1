@@ -949,7 +949,7 @@ TipoDato:
         {
                 var temp = new Nodo_aux.Nodo("TIPO");
                 var temp2 = new Nodo_aux.Nodo("BOOL");
-                temp.agregarHijo(temp2);
+                temp.agregarHijo(temp2);CVariable
                 $$ = temp;
         }
         |RESCHAR

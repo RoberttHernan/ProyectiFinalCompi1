@@ -1,3 +1,5 @@
+
+
 var vent_focus="pestana1";
 function get_vent(){
 return vent_focus;
@@ -16,6 +18,7 @@ function Conexion (){
             ReporteErrores(lista[0]);
             
             ReporteAst(lista[1]);
+            ReporteVariables(lista[2]);
             
             
            
@@ -29,6 +32,10 @@ function Conexion (){
 function ReporteErrores(lista){
     var divisionError = document.getElementById('reporteErrores');
     divisionError.innerHTML = JSON.stringify(lista);
+}
+function ReporteVariables(texto){
+    var divisionVariables = document.getElementById('reporteVariables');
+    divisionVariables.innerHTML =texto;
 }
 function ReporteAst (raiz){
     var cadena = "<ul class='jstree-container-ul jstree-children' role='group' >";

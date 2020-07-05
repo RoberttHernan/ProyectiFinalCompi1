@@ -16,3 +16,4 @@ class Variable{
     }
 
 }
+export{Variable};
