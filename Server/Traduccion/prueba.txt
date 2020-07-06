@@ -1,3 +1,6 @@
-while(a < 10){
-Console.Write("el valor de a es: " + a);
-}
+//Comentario normal
+int a,b,c = 0;
+string c ="cadena";
+double decimal = 26.3666;
+char c = 'c';
+bool bandera = false;

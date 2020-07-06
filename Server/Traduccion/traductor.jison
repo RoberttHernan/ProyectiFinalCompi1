@@ -71,12 +71,12 @@ let textoTraducido;
 "*"         return 'MULTI';
 
 
-
+('[.]')               return 'CARACTER';
 \"[^\"]*\"		{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
 [0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
 ([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
-(\'[.]\')               return 'CADENA'
+
 
 
 
@@ -148,18 +148,19 @@ Instruccion:
         |Sent_Return PYC  {$$ = $1+"\n";}     
         |Sent_Metodo     {$$ = $1+"\n";}       
         |Sent_Funcion      {$$ = $1+"\n";}       
-        |Sent_Llamada PYC      
-        |IDENTIFICADOR INCREMENTO PYC
-        |IDENTIFICADOR DECREMENTO PYC
-        |Sent_If  {$$ = $1;}  
-        |Sent_Switch    
-        |Sent_For       
-        |Sent_While    
-        |Sent_DoWhile PYC   
+        |Sent_Llamada PYC     {$$ = $1+"\n";} 
+        |IDENTIFICADOR INCREMENTO PYC {$$ = $1+"++\n";}
+        |IDENTIFICADOR DECREMENTO PYC  {$$ = $1+"--\n";}
+        |Sent_If  {$$ = $1+"\n";}  
+        |Sent_Switch   {$$ = $1+"\n";}  
+        |Sent_For     {$$ = $1+"\n";}    
+        |Sent_While    {$$ = $1+"\n";}  
+        |Sent_DoWhile PYC   {$$ = $1+"\n";}  
         |Sent_Main      {$$ = $1+"\n";}  
         |error  PYC
         {
                 console.log('Sintactico',yytext,this._$.first_line,this._$.first_column);
+                return;
                 
                 
         }
@@ -356,6 +357,10 @@ Expresion : Expresion MAS Expresion  {$$= $1+"+"+$3;}
         |CADENA
         {
             $$ = "\""+$1+"\"";
+        }
+        |CARACTER
+        {
+            $$ = "\'"+$1+"\'";
         }
         |RESTRUE
         {

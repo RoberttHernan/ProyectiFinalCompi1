@@ -82,7 +82,7 @@ let lista_variables = require('../Ast/src/Variable');
 [0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
 ([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
-(\'[.]\')               return 'CADENA'
+(\'[.]\')               return 'CARACTER';
 
 
 
@@ -117,10 +117,14 @@ let lista_variables = require('../Ast/src/Variable');
 %% 
 
 ini: Lista_Instrucciones EOF {
+       
+       try{
         var raiz = new Nodo_aux.Nodo("RAIZ");
         raiz.agregarHijo($1);
         $$ = raiz; 
         return $$;
+       }catch (error){}
+        
 
         
 } ;
@@ -204,12 +208,14 @@ Instruccion:
         |Sent_While     {$$ = $1;}
         |Sent_DoWhile PYC   {$$ = $1;}
         |Sent_Main      {$$ = $1;}    
-        |error  PYC
+        |error  
         {
+               
                 var er = new Nodo_aux.Nodo("Error");
 
-             Errores_1.errores.add(new nodoError_1.NodoError('Sintactico',yytext,this._$.first_line,this._$.first_column));
+             Errores_1.errores.add(new nodoError_1.NodoError('Sintactico luego de: ',yytext,this._$.first_line,this._$.first_column));
                 $$ = er;
+
         }
 ;
 /*-----------------------------------Declaracion y Asignacion */
@@ -910,6 +916,15 @@ Expresion : Expresion MAS Expresion
                 temp.agregarHijo(temp2);
                 $$= temp;
         }
+        |CARACTER
+        {
+                var temp = new Nodo_aux.Nodo("EXPRESION");
+                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var car = new Nodo_aux.Nodo($1+"");
+                temp2.agregarHijo(cad);
+                temp.agregarHijo(temp);
+                $$ = temp;
+        }
         |RESTRUE
         {
 
@@ -998,10 +1013,12 @@ TipoDato:
         }
         |RESCHAR
         {
+                
                 var temp = new Nodo_aux.Nodo("TIPO");
                 var temp2 = new Nodo_aux.Nodo("CHAR");
                 temp.agregarHijo(temp2);
                 $$ = temp;
+                
         }
 
 ;

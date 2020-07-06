@@ -47,6 +47,7 @@ function ReporteAst (raiz){
     divAst.innerHTML= cadena;
 }
 function generalAst (raiz){
+    try {
     var cadena = "<li role=\"treeitem\" data-jstree='{ \"opened\" : true }' aria-selected='false' aria-level='1' aria-labelledby='jl_1_anchor' aria-expanded='true' class='jstree-node jstree-last jstree-open' id='jl_1'>";
     cadena += "<i class='jstree-icon jstree-ocl' role='presentation'></i>" ;
     cadena += "<a class='jstree-anchor' href='#' tabindex='-1' >";
@@ -63,6 +64,8 @@ function generalAst (raiz){
     cadena += "</li>";
     return cadena;
 }
-
-   
+catch(error){
+    
+}
+}
 }

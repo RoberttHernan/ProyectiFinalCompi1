@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/Ejecutar',(req,res)=>{
 Errores_aux.errores.clear();
 var lista = [];
+listaVariables = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
 recorridoArbol(parseado);
@@ -74,6 +75,7 @@ function imprimir(raiz) {
     
 }
 function recorridoArbol (raiz){
+    try{
 if (raiz.getNombre()== "DECLARACION"){
     
     var rHijos = raiz.getListaHijos();
@@ -95,6 +97,9 @@ if (raiz.getNombre()== "DECLARACION"){
         
     }
 }
+    }catch (error){
+        
+    }
 }
 
 function htmlVariables(){
