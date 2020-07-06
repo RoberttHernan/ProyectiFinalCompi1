@@ -154,6 +154,16 @@ case 28:
             this.$ = $$[$0-2] +" = "+ $$[$0];
         
 break;
+case 29:
+
+    this.$= "while "+ $$[$0-2] +":\n"+$$[$0]+"\n";
+
+break;
+case 30:
+
+    this.$ = "while True:\n"+$$[$0-4] +"if("+$$[$0-1]+"):\nbreak";
+
+break;
 case 37:
 
         this.$ = $$[$0-2] +"\nelse"+$$[$0];
@@ -167,6 +177,29 @@ break;
 case 40:
 
             this.$ = "if "+ $$[$0-2] +":" +$$[$0] ;
+        
+break;
+case 41:
+
+    this.$ = "def switch (case,"+$$[$0-4]+"):\nswitcher ={\n"+$$[$0-1] +"\n}\n";
+
+break;
+case 42:
+
+    this.$ = $$[$0-1]+$$[$0];
+
+break;
+case 43:
+this.$=$$[$0];
+break;
+case 44:
+
+    this.$ = $$[$0-2] +" :" +$$[$0]+"\n";
+
+break;
+case 45:
+
+            this.$ = 0 +": " +$$[$0];
         
 break;
 case 46:

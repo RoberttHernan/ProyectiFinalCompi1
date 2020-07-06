@@ -196,8 +196,14 @@ Asignacion:
 ;
 /*----------------------------------------------Bucles------------------------------*/
 Sent_While: RESWHILE PABRE Expresion PCIERRA Bloque
+{
+    $$= "while "+ $3 +":\n"+$5+"\n";
+}
 ;
 Sent_DoWhile: RESDO Bloque RESWHILE PABRE Expresion PCIERRA 
+{
+    $$ = "while True:\n"+$2 +"if("+$5+"):\nbreak";
+}
 ;
 Sent_For: RESFOR PABRE Init_For PYC Expresion PYC End_For PCIERRA Bloque
 ;
@@ -232,17 +238,23 @@ Lista_Condiciones:
 ;
 Sent_Switch : RESSWITCH PABRE Expresion PCIERRA CABRE Lista_Casos CCIERRA
 {
-    $$ = "def switch (case,"+$3+"):\nswitcher ={\n"+$6 +"\n}";
+    $$ = "def switch (case,"+$3+"):\nswitcher ={\n"+$6 +"\n}\n";
 }
 ;
 Lista_Casos: Lista_Casos Caso
 {
-
+    $$ = $1+$2;
 }
-        |Caso
+        |Caso   {$$=$1;}
 ;
 Caso : RESCASE Expresion DOSPUNTOS Lista_Instrucciones 
+{
+    $$ = $2 +" :" +$4+"\n";
+}
         |RESDEFAULT DOSPUNTOS Lista_Instrucciones
+        {
+            $$ = 0 +": " +$3;
+        }
 ;
 /*--------------------------------------Metodos y funciones--------------------------------*/
 Sent_Metodo: RESVOID IDENTIFICADOR PABRE PCIERRA Bloque
