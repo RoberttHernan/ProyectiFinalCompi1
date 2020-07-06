@@ -14,7 +14,7 @@ var Variable_aux = require('./Ast/src/Variable');
 var fs = require('fs'); 
 
 var listaVariables=[];
-var texoTraduccion; 
+
 
 
 var app = express();
@@ -135,6 +135,4 @@ function htmlVariables(){
     return texto;
 
 }
-function recorridoArbolTraduccion(raiz){
-    
-}
+
