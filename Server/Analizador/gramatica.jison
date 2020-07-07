@@ -77,12 +77,11 @@ let lista_variables = require('../Ast/src/Variable');
 "*"         return 'MULTI';
 
 
-
+\'[^\']*\'		{ yytext = yytext.substr(1,yyleng-2); return 'CADENAHTML'; }
 \"[^\"]*\"		{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
 [0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
 ([a-zA-Z])[a-zA-Z0-9_]*	return 'IDENTIFICADOR';
-(\'[.]\')               return 'CARACTER';
 
 
 
@@ -916,14 +915,21 @@ Expresion : Expresion MAS Expresion
                 temp.agregarHijo(temp2);
                 $$= temp;
         }
-        |CARACTER
+        |CADENAHTML
         {
+               
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
-                var car = new Nodo_aux.Nodo($1+"");
-                temp2.agregarHijo(cad);
-                temp.agregarHijo(temp);
-                $$ = temp;
+                var temp2;
+                if ($1.length == 1){
+                temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                }else{
+                     temp2 = new Nodo_aux.Nodo("HTML");   
+                }
+                
+               var car = new Nodo_aux.Nodo($1);
+                temp2.agregarHijo(car);
+               temp.agregarHijo(temp2);
+                $$ = temp;  
         }
         |RESTRUE
         {

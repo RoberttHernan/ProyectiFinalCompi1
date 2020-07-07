@@ -71,7 +71,7 @@ let textoTraducido;
 "*"         return 'MULTI';
 
 
-('[.]')               return 'CARACTER';
+\'[^\']*\'		{ yytext = yytext.substr(1,yyleng-2); return 'CARACTER'; }
 \"[^\"]*\"		{ yytext = yytext.substr(1,yyleng-2); return 'CADENA'; }
 [0-9]+"."[0-9]+    	return 'DECIMAL';
 [0-9]+  		return 'ENTERO';
