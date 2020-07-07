@@ -9,6 +9,7 @@ var express = require ('express');
 var cors = require("cors");
 var bodyParser = require('body-parser');
 var analisis = require('./Analizador/gramatica');
+var traductor = require('./Traduccion/traductor');
 var Errores_aux = require('./Ast/src/errores');  
 var Variable_aux = require('./Ast/src/Variable');
 var fs = require('fs'); 
@@ -32,12 +33,15 @@ var lista = [];
 listaVariables = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
+fs.writeFileSync('./astTexto.json', JSON.stringify(parseado, null, 2));
+var traduccion = traductor.parse(dato);
 recorridoArbol(parseado);
 var htmlVar = htmlVariables();
 
     lista.push(Errores_aux.errores.geterror());//Lista de errores en lista[0]
     lista.push(parseado);// Arbol Ast  en lista[1]
     lista.push(htmlVar);//Lista de variables en lista[2]
+    lista.push(traduccion);
 
     
     

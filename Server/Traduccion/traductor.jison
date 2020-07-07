@@ -109,8 +109,7 @@ let textoTraducido;
 
 ini: Lista_Instrucciones EOF {
         
-    console.log($$);
-    console.log("Analisis Finalizado");
+  return $$ ;
         
 } ;
 

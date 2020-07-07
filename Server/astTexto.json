@@ -1,0 +1,2949 @@
+{
+  "nombre": "RAIZ",
+  "ListaHijos": [
+    {
+      "nombre": "INSTRUCCION",
+      "ListaHijos": [
+        {
+          "nombre": "DECLARACION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "INT",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_VARIABLES",
+              "ListaHijos": [
+                {
+                  "nombre": "IDENTIFICADOR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "x",
+                      "ListaHijos": []
+                    }
+                  ]
+                },
+                {
+                  "nombre": "IDENTIFICADOR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "y",
+                      "ListaHijos": []
+                    }
+                  ]
+                },
+                {
+                  "nombre": "IDENTIFICADOR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "z",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "EXPRESION",
+              "ListaHijos": [
+                {
+                  "nombre": "PRIMITIVO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "42",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "DECLARACION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "STRING",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_VARIABLES",
+              "ListaHijos": [
+                {
+                  "nombre": "IDENTIFICADOR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "g",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "EXPRESION",
+              "ListaHijos": [
+                {
+                  "nombre": "PRIMITIVO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "Cadena",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "ASIGNACION",
+          "ListaHijos": [
+            {
+              "nombre": "IDENTIFICADOR",
+              "ListaHijos": [
+                {
+                  "nombre": "x",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "EXPRESION",
+              "ListaHijos": [
+                {
+                  "nombre": "EXPRESION",
+                  "ListaHijos": [
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "a",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "INCREMENTO",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "DECLARACION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "INT",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_VARIABLES",
+              "ListaHijos": [
+                {
+                  "nombre": "IDENTIFICADOR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "h",
+                      "ListaHijos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "LOGICA",
+              "ListaHijos": [
+                {
+                  "nombre": "OR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "IDENTIFICADOR",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "a",
+                                  "ListaHijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "LOGICA",
+                          "ListaHijos": [
+                            {
+                              "nombre": "AND",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "b",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "c",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "AND",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "b",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "c",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "OR",
+                  "ListaHijos": [
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "IDENTIFICADOR",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "a",
+                                  "ListaHijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "LOGICA",
+                          "ListaHijos": [
+                            {
+                              "nombre": "AND",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "b",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "c",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "AND",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "b",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "IDENTIFICADOR",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "c",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "METODO",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "MAIN",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "INSTRUCCION",
+              "ListaHijos": [
+                {
+                  "nombre": "DECLARACION",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "STRING",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "LISTA_VARIABLES",
+                      "ListaHijos": [
+                        {
+                          "nombre": "IDENTIFICADOR",
+                          "ListaHijos": [
+                            {
+                              "nombre": "ff",
+                              "ListaHijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "PRIMITIVO",
+                          "ListaHijos": [
+                            {
+                              "nombre": "f",
+                              "ListaHijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "DECLARACION",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "INT",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "LISTA_VARIABLES",
+                      "ListaHijos": [
+                        {
+                          "nombre": "IDENTIFICADOR",
+                          "ListaHijos": [
+                            {
+                              "nombre": "z",
+                              "ListaHijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "PRIMITIVO",
+                          "ListaHijos": [
+                            {
+                              "nombre": "2658",
+                              "ListaHijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "CONSOLE_WRITE",
+                  "ListaHijos": [
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "OPERACION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "SUMA",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "5",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "2",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "SUMA",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "5",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "2",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "RETURN",
+                  "ListaHijos": [
+                    {
+                      "nombre": "EXPRESION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "PRIMITIVO",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "5",
+                                  "ListaHijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "LLAMADA",
+                  "ListaHijos": [
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "f",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "LISTA_ARGUMENTOS",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "PRIMITIVO",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "1",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "PRIMITIVO",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "2",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "PRIMITIVO",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "3",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "PRIMITIVO",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "hoo",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "METODO",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "VOID",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "IDENTIFICADOR",
+              "ListaHijos": [
+                {
+                  "nombre": "funcion1",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_PARAMETROS",
+              "ListaHijos": [
+                {
+                  "nombre": "PARAMETRO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "INT",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "a",
+                          "ListaHijos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PARAMETRO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "DOUBLE",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "b",
+                          "ListaHijos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "INSTRUCCION",
+              "ListaHijos": [
+                {
+                  "nombre": "SENTENCIA_IF",
+                  "ListaHijos": [
+                    {
+                      "nombre": "IF",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CONDICION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "RELACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "MENOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "MENOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "INSTRUCCION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "ASIGNACION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "IDENTIFICADOR",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "x",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "56",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "ELSE_IF",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CONDICION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "LOGICA",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "OR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "LOGICA",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "AND",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "nombre": "AND",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "RELACION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "DIFERENTE_DE",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "z",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "b",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "nombre": "DIFERENTE_DE",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "z",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "b",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "OR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "LOGICA",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "AND",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "nombre": "AND",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "a",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "8",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "RELACION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "nombre": "COMPARACION",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "IDENTIFICADOR",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "x",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "nombre": "EXPRESION",
+                                                                  "ListaHijos": [
+                                                                    {
+                                                                      "nombre": "EXPRESION",
+                                                                      "ListaHijos": [
+                                                                        {
+                                                                          "nombre": "PRIMITIVO",
+                                                                          "ListaHijos": [
+                                                                            {
+                                                                              "nombre": "5",
+                                                                              "ListaHijos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "RELACION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "DIFERENTE_DE",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "z",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "b",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "nombre": "DIFERENTE_DE",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "z",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "nombre": "EXPRESION",
+                                                      "ListaHijos": [
+                                                        {
+                                                          "nombre": "EXPRESION",
+                                                          "ListaHijos": [
+                                                            {
+                                                              "nombre": "IDENTIFICADOR",
+                                                              "ListaHijos": [
+                                                                {
+                                                                  "nombre": "b",
+                                                                  "ListaHijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "INSTRUCCION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONSOLE_WRITE",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "aaa",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "FUNCION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "INT",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "IDENTIFICADOR",
+              "ListaHijos": [
+                {
+                  "nombre": "funcion2",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_INSTRUCCIONES",
+              "ListaHijos": []
+            }
+          ]
+        },
+        {
+          "nombre": "FUNCION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "STRING",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "IDENTIFICADOR",
+              "ListaHijos": [
+                {
+                  "nombre": "funcion3",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "LISTA_PARAMETROS",
+              "ListaHijos": [
+                {
+                  "nombre": "PARAMETRO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "INT",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "a",
+                          "ListaHijos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PARAMETRO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "STRING",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "b",
+                          "ListaHijos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PARAMETRO",
+                  "ListaHijos": [
+                    {
+                      "nombre": "TIPO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CHAR",
+                          "ListaHijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "IDENTIFICADOR",
+                      "ListaHijos": [
+                        {
+                          "nombre": "c",
+                          "ListaHijos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "INSTRUCCION",
+              "ListaHijos": [
+                {
+                  "nombre": "SENTENCIA_IF",
+                  "ListaHijos": [
+                    {
+                      "nombre": "IF",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CONDICION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "RELACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "MENOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "MENOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "INSTRUCCION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONSOLE_WRITE",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "b mayor que a",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "ELSE_IF",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CONDICION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "RELACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "COMPARACION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "COMPARACION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "b",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "INSTRUCCION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONSOLE_WRITE",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "a y b son iguales",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "FUNCION",
+          "ListaHijos": [
+            {
+              "nombre": "TIPO",
+              "ListaHijos": [
+                {
+                  "nombre": "DOUBLE",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "IDENTIFICADOR",
+              "ListaHijos": [
+                {
+                  "nombre": "pruebaFunction",
+                  "ListaHijos": []
+                }
+              ]
+            },
+            {
+              "nombre": "INSTRUCCION",
+              "ListaHijos": [
+                {
+                  "nombre": "SENT_SWITCH",
+                  "ListaHijos": [
+                    {
+                      "nombre": "PARAMETRO",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "IDENTIFICADOR",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "valor",
+                                      "ListaHijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "LISTA_CASOS",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CASO",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONDICION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "1",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "INSTRUCCION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "ASIGNACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "IDENTIFICADOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "precio",
+                                          "ListaHijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "55",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "BREAK",
+                                  "ListaHijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "CASO",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONDICION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "2",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "INSTRUCCION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "ASIGNACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "IDENTIFICADOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "precio",
+                                          "ListaHijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "25",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "CASO",
+                          "ListaHijos": [
+                            {
+                              "nombre": "CONDICION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "EXPRESION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "PRIMITIVO",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "3",
+                                              "ListaHijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "nombre": "INSTRUCCION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "ASIGNACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "IDENTIFICADOR",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "precio",
+                                          "ListaHijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "40",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "nombre": "DEFAULT",
+                          "ListaHijos": [
+                            {
+                              "nombre": "INSTRUCCION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "CONSOLE_WRITE",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "No válido. Escoja 1, 2, o 3.",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nombre": "WHILE",
+                  "ListaHijos": [
+                    {
+                      "nombre": "CONDICION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "EXPRESION",
+                          "ListaHijos": [
+                            {
+                              "nombre": "RELACION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "MAYOR",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "IDENTIFICADOR",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "a",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "10",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "nombre": "MAYOR",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "IDENTIFICADOR",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "a",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "EXPRESION",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "PRIMITIVO",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "10",
+                                                  "ListaHijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nombre": "INSTRUCCION",
+                      "ListaHijos": [
+                        {
+                          "nombre": "CONSOLE_WRITE",
+                          "ListaHijos": [
+                            {
+                              "nombre": "EXPRESION",
+                              "ListaHijos": [
+                                {
+                                  "nombre": "OPERACION",
+                                  "ListaHijos": [
+                                    {
+                                      "nombre": "SUMA",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "PRIMITIVO",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "el valor de a es: ",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "nombre": "SUMA",
+                                      "ListaHijos": [
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "PRIMITIVO",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "el valor de a es: ",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "nombre": "EXPRESION",
+                                          "ListaHijos": [
+                                            {
+                                              "nombre": "EXPRESION",
+                                              "ListaHijos": [
+                                                {
+                                                  "nombre": "IDENTIFICADOR",
+                                                  "ListaHijos": [
+                                                    {
+                                                      "nombre": "a",
+                                                      "ListaHijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

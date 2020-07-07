@@ -19,6 +19,8 @@ function Conexion (){
             
             ReporteAst(lista[1]);
             ReporteVariables(lista[2]);
+            traduccionTexto (lista[3]);
+           
             
            
             
@@ -45,6 +47,10 @@ function ReporteAst (raiz){
 
     var divAst = document.getElementById('ArbolAst');
     divAst.innerHTML= cadena;
+}
+function traduccionTexto (texto){
+    var textarea = document.getElementById('TraduccionPhyton');
+    textarea.textContent = texto;
 }
 function generalAst (raiz){
     try {

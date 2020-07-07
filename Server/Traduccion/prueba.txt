@@ -1,6 +1,68 @@
-//Comentario normal
-int a,b,c = 0;
-string c ="cadena";
-double decimal = 26.3666;
-char c = 'c';
-bool bandera = false;
+//comentario Simple de Linea
+/*
+primero vamor a probar un metodo
+
+*/
+
+void prueba1 (int f, double deci, string cadena ){
+// Ahora probaremso la declaracion de variables
+int numero1, numero2,numero3;
+string cadena1 = "cadena";
+double deci1, deci2 = 20.56;
+
+if (b > a && c!=56 ){
+Console.Write("b mayor que a");
+}else if(a == b){
+Console.Write("a y b son iguales");
+}
+
+
+}
+
+int x, y, z = 42;
+string g="Cadena";
+x = a++;
+int h = a || b && c ;
+
+void main (){
+    string ff = "f";
+    int z = 2658;
+    Console.Write(5+2);
+    return 5;
+
+    f (1,2,3,"hoo");
+}
+void funcion1 (int a, double b){
+    if (a>b){
+        x = 56;
+    }else if (a==8 && x ==5 || z !=b){
+        Console.Write("aaa");
+    }
+}
+int funcion2 (){
+
+}
+string funcion3 (int a, string b, char c){
+ if (b > a){
+Console.Write("b mayor que a");
+}else if(a == b){
+Console.Write("a y b son iguales");
+}
+}
+
+double pruebaFunction (){
+    switch(valor){
+case 1:
+precio = 55;
+break;
+case 2:
+precio = 25;
+case 3:
+precio = 40;
+default:
+Console.Write("No válido. Escoja 1, 2, o 3.");
+}
+while(a < 10){
+Console.Write("el valor de a es: " + a);
+}
+}
