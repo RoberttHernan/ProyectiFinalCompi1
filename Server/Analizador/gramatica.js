@@ -821,7 +821,6 @@ case 72:
 break;
 case 73:
 
-                console.log("--------------");
         var temp = new Nodo_aux.Nodo("LOGICA");
         var op = new Nodo_aux.Nodo("NOT");
         temp.agregarHijo(op);
@@ -995,7 +994,7 @@ case 89:
 
                 var temp = new Nodo_aux.Nodo("TIPO");
                 var temp2 = new Nodo_aux.Nodo("BOOL");
-                temp.agregarHijo(temp2);CVariable
+                temp.agregarHijo(temp2);
                 this.$ = temp;
         
 break;

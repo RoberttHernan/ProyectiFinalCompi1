@@ -20,6 +20,7 @@ function Conexion (){
             ReporteAst(lista[1]);
             ReporteVariables(lista[2]);
             traduccionTexto (lista[3]);
+            reporteHtml(lista[4]);
            
             
            
@@ -51,6 +52,10 @@ function ReporteAst (raiz){
 function traduccionTexto (texto){
     var textarea = document.getElementById('TraduccionPhyton');
     textarea.textContent = texto;
+}
+function reporteHtml (texto){
+    var textHtml = document.getElementById('TextoHtml');
+    textHtml.textContent = texto;
 }
 function generalAst (raiz){
     try {

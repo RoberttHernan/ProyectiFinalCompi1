@@ -852,7 +852,6 @@ Expresion : Expresion MAS Expresion
         }
         |NOT Expresion
         {
-                console.log("--------------");
         var temp = new Nodo_aux.Nodo("LOGICA");
         var op = new Nodo_aux.Nodo("NOT");
         temp.agregarHijo(op);
@@ -1014,7 +1013,7 @@ TipoDato:
         {
                 var temp = new Nodo_aux.Nodo("TIPO");
                 var temp2 = new Nodo_aux.Nodo("BOOL");
-                temp.agregarHijo(temp2);CVariable
+                temp.agregarHijo(temp2);
                 $$ = temp;
         }
         |RESCHAR

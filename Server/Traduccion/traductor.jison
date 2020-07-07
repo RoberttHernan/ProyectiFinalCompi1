@@ -85,9 +85,7 @@ let textoTraducido;
 
 
 <<EOF>>				return 'EOF';
-.					{ console.error('Error léxico: ' + yytext + ', en la linea: ' + yylloc.first_line + ', en la columna: ' + yylloc.first_column);
-                                        
-                                                 }
+.					{ }
 
 /lex
 
@@ -157,10 +155,7 @@ Instruccion:
         |Sent_DoWhile PYC   {$$ = $1+"\n";}  
         |Sent_Main      {$$ = $1+"\n";}  
         |error  PYC
-        {
-                console.log('Sintactico',yytext,this._$.first_line,this._$.first_column);
-                return;
-                
+        {          
                 
         }
 ;

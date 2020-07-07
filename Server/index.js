@@ -13,6 +13,7 @@ var traductor = require('./Traduccion/traductor');
 var Errores_aux = require('./Ast/src/errores');  
 var Variable_aux = require('./Ast/src/Variable');
 var fs = require('fs'); 
+var textoHtml=""; 
 
 var listaVariables=[];
 
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/Ejecutar',(req,res)=>{
 Errores_aux.errores.clear();
 var lista = [];
+textoHtml ="";
 listaVariables = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
@@ -38,10 +40,14 @@ var traduccion = traductor.parse(dato);
 recorridoArbol(parseado);
 var htmlVar = htmlVariables();
 
+var textthml = recorridoArbolHtml(parseado);
+
+
     lista.push(Errores_aux.errores.geterror());//Lista de errores en lista[0]
     lista.push(parseado);// Arbol Ast  en lista[1]
     lista.push(htmlVar);//Lista de variables en lista[2]
-    lista.push(traduccion);
+    lista.push(traduccion); //Tarduccion en lista[3]
+    lista.push(textthml); // TextoHtml en lista[4]
 
     
     
@@ -143,5 +149,27 @@ function htmlVariables(){
     texto+= "</table>";
     return texto;
 
+}
+function recorridoArbolHtml (raiz){
+    try{
+       
+if (raiz.getNombre()== "HTML"){  
+   
+
+        textoHtml+= raiz.getListaHijos()[0].getNombre();
+    
+
+    
+}else {
+    
+    for (var i = 0; i<raiz.getListaHijos().length;i++){
+        recorridoArbolHtml(raiz.getListaHijos()[i]);
+        
+    }
+}
+return textoHtml;
+    }catch (error){
+        
+    }
 }
 
