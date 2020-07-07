@@ -861,7 +861,7 @@ break;
 case 77:
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var ent = new Nodo_aux.Nodo($$[$0]+"");
                 temp2.agregarHijo(ent);
                 temp.agregarHijo(temp2);
@@ -871,7 +871,7 @@ break;
 case 78:
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var dec = new Nodo_aux.Nodo($$[$0]+"");
                 temp2.agregarHijo(dec);
                 temp.agregarHijo(temp2);
@@ -881,7 +881,7 @@ break;
 case 79:
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var cad = new Nodo_aux.Nodo($$[$0]+"");
                 temp2.agregarHijo(cad);
                 temp.agregarHijo(temp2);
@@ -894,7 +894,7 @@ case 80:
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2;
                 if ($$[$0].length == 1){
-                temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 }else{
                      temp2 = new Nodo_aux.Nodo("HTML");   
                 }
@@ -909,7 +909,7 @@ case 81:
 
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("TRUE");
                 var tru = new Nodo_aux.Nodo($$[$0]+"");
                 temp2.agregarHijo(tru);
                 temp.agregarHijo(temp2);
@@ -922,7 +922,7 @@ case 82:
 
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("FALSE");
                 var fals = new Nodo_aux.Nodo($$[$0]+"");
                 temp2.agregarHijo(fals);
                 temp.agregarHijo(temp2);

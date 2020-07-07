@@ -85,8 +85,11 @@ var $0 = $$.length - 1;
 switch (yystate) {
 case 1:
 
-        
+   try {     
   return this.$ ;
+   }catch (error){
+       
+   }
         
 
 break;
@@ -130,10 +133,7 @@ case 16:
 this.$ = $$[$0-2]+"--\n";
 break;
 case 23:
-
-                console.log('Sintactico',yytext,this._$.first_line,this._$.first_column);
-                return;
-                
+          
                 
         
 break;
@@ -1037,9 +1037,7 @@ case 53:
 break;
 case 54:return 5;
 break;
-case 55: console.error('Error léxico: ' + yy_.yytext + ', en la linea: ' + yy_.yylloc.first_line + ', en la columna: ' + yy_.yylloc.first_column);
-                                        
-                                                 
+case 55: 
 break;
 }
 },

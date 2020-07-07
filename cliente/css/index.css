@@ -1,10 +1,10 @@
 body {
-    background: darkgrey;
+    background: rgb(54, 53, 53);
 }
 
 .btnp {
     border: none;
-    background: #3a7999;
+    background: #d88940;
     color: #f2f2f2;
     padding: 5px;
     font-size: 14px;
@@ -17,6 +17,7 @@ body {
 
 .contenedor{
     width: 1080px;
+    height: 1000px;
     margin: auto;
     background:#272829;
     color: rgb(0, 112, 163);

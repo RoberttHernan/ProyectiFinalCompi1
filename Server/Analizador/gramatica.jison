@@ -890,7 +890,7 @@ Expresion : Expresion MAS Expresion
         |ENTERO 
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var ent = new Nodo_aux.Nodo($1+"");
                 temp2.agregarHijo(ent);
                 temp.agregarHijo(temp2);
@@ -899,7 +899,7 @@ Expresion : Expresion MAS Expresion
         |DECIMAL
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var dec = new Nodo_aux.Nodo($1+"");
                 temp2.agregarHijo(dec);
                 temp.agregarHijo(temp2);
@@ -908,7 +908,7 @@ Expresion : Expresion MAS Expresion
         |CADENA
         {
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 var cad = new Nodo_aux.Nodo($1+"");
                 temp2.agregarHijo(cad);
                 temp.agregarHijo(temp2);
@@ -920,7 +920,7 @@ Expresion : Expresion MAS Expresion
                 var temp = new Nodo_aux.Nodo("EXPRESION");
                 var temp2;
                 if ($1.length == 1){
-                temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                temp2 = new Nodo_aux.Nodo("DATO_PRIMITIVO");
                 }else{
                      temp2 = new Nodo_aux.Nodo("HTML");   
                 }
@@ -934,7 +934,7 @@ Expresion : Expresion MAS Expresion
         {
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("TRUE");
                 var tru = new Nodo_aux.Nodo($1+"");
                 temp2.agregarHijo(tru);
                 temp.agregarHijo(temp2);
@@ -946,7 +946,7 @@ Expresion : Expresion MAS Expresion
         {
 
                 var temp = new Nodo_aux.Nodo("EXPRESION");
-                var temp2 = new Nodo_aux.Nodo("PRIMITIVO");
+                var temp2 = new Nodo_aux.Nodo("FALSE");
                 var fals = new Nodo_aux.Nodo($1+"");
                 temp2.agregarHijo(fals);
                 temp.agregarHijo(temp2);

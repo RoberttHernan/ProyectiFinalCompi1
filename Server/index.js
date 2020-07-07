@@ -37,7 +37,10 @@ listaVariables = [];
 var dato = req.body.dato;
 var parseado = parser(dato);
 fs.writeFileSync('./astTexto.json', JSON.stringify(parseado, null, 2));
+try {
 var traduccion = traductor.parse(dato);
+
+}catch(error){}
 recorridoArbol(parseado);
 var htmlVar = htmlVariables();
 
@@ -57,7 +60,7 @@ var ht = himalaya.parse(textthml);
   
     res.send(JSON.stringify(lista));
 
-
+ 
 
 
 

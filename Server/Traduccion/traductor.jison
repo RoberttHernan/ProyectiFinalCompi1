@@ -106,8 +106,11 @@ let textoTraducido;
 %% 
 
 ini: Lista_Instrucciones EOF {
-        
+   try {     
   return $$ ;
+   }catch (error){
+       
+   }
         
 } ;
 
