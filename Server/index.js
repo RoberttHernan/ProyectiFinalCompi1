@@ -12,6 +12,7 @@ var analisis = require('./Analizador/gramatica');
 var traductor = require('./Traduccion/traductor');
 var Errores_aux = require('./Ast/src/errores');  
 var Variable_aux = require('./Ast/src/Variable');
+var himalaya = require('himalaya');
 var fs = require('fs'); 
 var textoHtml=""; 
 
@@ -41,6 +42,7 @@ recorridoArbol(parseado);
 var htmlVar = htmlVariables();
 
 var textthml = recorridoArbolHtml(parseado);
+var ht = himalaya.parse(textthml);
 
 
     lista.push(Errores_aux.errores.geterror());//Lista de errores en lista[0]
@@ -48,6 +50,7 @@ var textthml = recorridoArbolHtml(parseado);
     lista.push(htmlVar);//Lista de variables en lista[2]
     lista.push(traduccion); //Tarduccion en lista[3]
     lista.push(textthml); // TextoHtml en lista[4]
+    lista.push(ht);//Traduccion del html en lista[5];
 
     
     

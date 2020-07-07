@@ -189,8 +189,6 @@ function AbrirArchivo(files){
     var textoselect2 = document.createTextNode(file.name);
     op2.appendChild(textoselect2);
 
-    seld.appendChild(op2);
-    seli.appendChild(op);
 
 
     var file_input=document.getElementById("fileInput");

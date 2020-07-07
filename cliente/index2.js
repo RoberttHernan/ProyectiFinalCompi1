@@ -21,6 +21,7 @@ function Conexion (){
             ReporteVariables(lista[2]);
             traduccionTexto (lista[3]);
             reporteHtml(lista[4]);
+            reporteJsonHtml(JSON.stringify(lista[5]));
            
             
            
@@ -56,6 +57,10 @@ function traduccionTexto (texto){
 function reporteHtml (texto){
     var textHtml = document.getElementById('TextoHtml');
     textHtml.textContent = texto;
+}
+function reporteJsonHtml (texto){
+    var textJson = document.getElementById('TextoJson');
+    textJson.textContent = texto;
 }
 function generalAst (raiz){
     try {
